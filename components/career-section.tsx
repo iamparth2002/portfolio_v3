@@ -9,8 +9,8 @@ const work = [
     location: 'New Delhi, India',
     title: 'Frontend Engineer',
     logoUrl: '/bi.png',
-    start: 'Sept 2024',
-    end: 'Dec 2024',
+    start: 'Mar 2025',
+    end: 'Present',
     list: [
       'Designed, developed, and deployed scalable web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js)',
       'Shipdart: Built a shipping management system integrating multi-courier APIs, reducing shipment tracking issues by 40%',

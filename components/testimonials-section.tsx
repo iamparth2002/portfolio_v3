@@ -9,7 +9,7 @@ export function TestimonialsSection() {
         <div className="mb-10">
           <span className="text-8xl text-purple-500">“</span>
           <p className="text-gray-300 ml-6 text-2xl break-words whitespace-pre-line">
-            Mohammed is an exceptionally talented and motivated software developer who is a great addition to any
+            Parth is an exceptionally talented and motivated software developer who is a great addition to any
             developer team.<br/>Talented and always eager to tackle new challenges, Moh brings a sharp mind and a fun attitude to every project which makes him an invaluable team member.
           </p>
         </div>
