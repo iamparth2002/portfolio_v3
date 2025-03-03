@@ -13,7 +13,7 @@ export default function Home() {
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e:MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 

@@ -1,4 +1,18 @@
-const careerData = [
+interface Career {
+  company: string;
+  role: string;
+  duration: string;
+  responsibilities: string[];
+}
+
+interface CareerItemProps {
+  company: string;
+  role: string;
+  duration: string;
+  responsibilities: string[];
+}
+
+const careerData: Career[] = [
   {
     company: "Intellemo.ai",
     role: "Frontend Engineer",
@@ -10,8 +24,6 @@ const careerData = [
       "Worked with technologies such as TypeScript, Node.js, MongoDB, Kafka, GraphQL, and other technologies.",
     ],
   },
-
-
   {
     company: "Yatiken Software Solutions",
     role: "Full Stack Developer",
@@ -65,7 +77,7 @@ export function CareerSection() {
   );
 }
 
-export function CareerItem({ company, role, duration, responsibilities }) {
+export function CareerItem({ company, role, duration, responsibilities }: CareerItemProps) {
   return (
     <div className="career-item">
       <h3 className="text-3xl font-bold">{company}</h3>
@@ -74,12 +86,10 @@ export function CareerItem({ company, role, duration, responsibilities }) {
       <ul className="space-y-1 text-gray-300 list-disc pl-5">
         {responsibilities.map((item, index) => (
           <li className="relative pl-2" key={index}>
-
-            <span >{item}</span>
+            <span>{item}</span>
           </li>
         ))}
       </ul>
     </div>
-
   );
 }

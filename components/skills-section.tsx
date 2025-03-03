@@ -117,8 +117,8 @@ export function SkillsSection() {
         <div className="space-y-8 md:mt-10">
           <div className="bg-[#212124] rounded-lg p-6 border border-purple-400 ">
             <h3 className="font-bold mb-2 text-2xl">Frontend & Design</h3>
-            <p className=" text-gray-300 mb-4">
-              I'm  passionate about design, animation, and interactions, always aiming to build interfaces with great user
+            <p className="text-gray-300 mb-4">
+              I&apos;m passionate about design, animation, and interactions, always aiming to build interfaces with great user
               experiences.
             </p>
             <p className=" text-gray-300 mb-6">I have worked on web, mobile, and game development projects.</p>
@@ -130,17 +130,9 @@ export function SkillsSection() {
                 height={400}
                 className=" h-8 w-8"
               />
-              {/* <Image
-              src="/tailwind.webp"
-              alt="Charging stations app"
-              width={300}
-              height={400}
-              className="h-8 w-12"
-            /> */}
               <Image
                 src="/figma.svg"
                 alt="Charging stations app"
-
                 width={300}
                 height={400}
                 className=" h-8 w-8"
@@ -148,20 +140,20 @@ export function SkillsSection() {
             </div>
           </div>
           <div className="bg-[#212124] rounded-lg p-6 border border-purple-400">
-          <h3 className="font-bold mb-2 text-2xl">Management</h3>
-          <p className=" text-gray-300 mb-4">
-            I have worked with multiple clients and stakeholders to define projects that suit their needs and have led
-            these projects.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <span className="px-3 py-1 bg-purple-600 rounded-full ">Agile</span>
-            <span className="px-3 py-1 bg-purple-600 rounded-full ">Scrum</span>
-            <span className="px-3 py-1 bg-purple-600 rounded-full ">PM</span>
-            <span className="px-3 py-1 bg-purple-600 rounded-full ">Gantt</span>
+            <h3 className="font-bold mb-2 text-2xl">Management</h3>
+            <p className=" text-gray-300 mb-4">
+              I have worked with multiple clients and stakeholders to define projects that suit their needs and have led
+              these projects.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-purple-600 rounded-full ">Agile</span>
+              <span className="px-3 py-1 bg-purple-600 rounded-full ">Scrum</span>
+              <span className="px-3 py-1 bg-purple-600 rounded-full ">PM</span>
+              <span className="px-3 py-1 bg-purple-600 rounded-full ">Gantt</span>
+            </div>
           </div>
         </div>
-        </div>
-        
+
 
 
       </div>
