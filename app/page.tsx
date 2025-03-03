@@ -11,18 +11,30 @@ import Image from "next/image"
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
+  const [isClient, setIsClient] = useState(false); // State to check if we're on the client side
 
   useEffect(() => {
-    const handleMouseMove = (e:MouseEvent) => {
+    // This will ensure window is available only on the client side
+    if (typeof window !== "undefined") {
+      setIsClient(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    if (isClient) {
+      window.addEventListener("mousemove", handleMouseMove);
+    }
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      if (isClient) {
+        window.removeEventListener("mousemove", handleMouseMove);
+      }
     };
-  }, []);
+  }, [isClient]);
 
   useEffect(() => {
     const animate = () => {
@@ -39,9 +51,10 @@ export default function Home() {
       requestAnimationFrame(animate);
     };
 
-    animate();
-
-  }, [mousePosition]);
+    if (isClient) {
+      animate();
+    }
+  }, [mousePosition, isClient]);
 
   return (
     <div className="min-h-screen bg-[#18181B] text-white">
@@ -57,38 +70,35 @@ export default function Home() {
       </div>
 
       <hr />
-      {/* Career Section */}
       <CareerSection />
       <hr />
 
       <div className="bg-grid-pattern">
-        {/* Skills Section */}
         <SkillsSection />
-
-        {/* Testimonials Section */}
         <TestimonialsSection />
       </div>
 
-      {/* Footer */}
       <Footer />
 
       {/* Floating Image */}
-      <div
-        className="absolute pointer-events-none opacity-[15%] md:opacity-100"
-        style={{
-          top: imagePosition.y + window.scrollY - 80,  // Include scroll offset for top position
-          left: imagePosition.x - 80,  // Offset the image from the mouse cursor
-          transition: "transform 0.1s ease-out", // Smooth transition for movement
-        }}
-      >
-        <Image
-          src="/amoung-us.gif"
-          width={50}
-          height={50}
-          alt="Among Us"
-          className="w-[80px] aspect-square "
-        />
-      </div>
+      {isClient && (
+        <div
+          className="absolute pointer-events-none opacity-[15%] md:opacity-100"
+          style={{
+            top: imagePosition.y + (isClient ? window.scrollY : 0) - 80,  // Include scroll offset for top position
+            left: imagePosition.x - 80,  // Offset the image from the mouse cursor
+            transition: "transform 0.1s ease-out", // Smooth transition for movement
+          }}
+        >
+          <Image
+            src="/amoung-us.gif"
+            width={50}
+            height={50}
+            alt="Among Us"
+            className="w-[80px] aspect-square "
+          />
+        </div>
+      )}
     </div>
   );
 }
